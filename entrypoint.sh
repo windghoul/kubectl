@@ -6,6 +6,8 @@ version="$1"
 config="$2"
 command="$3"
 
+git config --global --add safe.directory /github/workspace
+
 if [ "$version" = "latest" ]; then
   version=$(curl -Ls https://dl.k8s.io/release/stable.txt)
 fi
